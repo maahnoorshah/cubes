@@ -1,22 +1,30 @@
+var button;
+var StepSize =  5 
+var Counter = 100
+var Sign =1; 
+var running=true;
+
 function setup() {
-  createCanvas(1000, 1000, WEBGL);
+	createCanvas(windowWidth, windowHeight);
+	centerX=windowWidth/2;
+	centerY=windowHeight/2;
+	background(0,0,255);
+	frameRate(1000);
+	button = createButton("FREEZE")
+	button.position (20,20);
+	button.mousePressed (Freeze)  
 }
+function draw() {		
+	if (running) {
+		Counter = Counter + Sign * StepSize;
+	}
 
-function draw() {
-  background(204,229,255);
-  rotateX(frameCount * 0.03);
-  rotateY(frameCount * 0.03);
-  box(100,100,100);(mouseX, mouseY, 20, 20);
-	translate (100,100,-100)
-	fill (255,178,102)
-  box(100,100,100);(mouseX, mouseY, 20, 20);
-	translate (100,100,-100)
-	fill (255,204,153);
-	box(100,100,100);(mouseX, mouseY, 20, 20);
-	translate (100,100,-100)
-	fill (255,153,51)
-	box(100,100,100);(mouseX, mouseY, 20, 20);
-	translate (100,100,-100)
-	fill (255,229,204)
-
+fill(204,153,205);
+noStroke();
+ellipse(centerX,centerY,frameCount%750,frameCount%250);
+fill(229,204,255);
+ellipse(centerX,centerY,frameCount%200,frameCount%350)
+}
+function Freeze (){
+	running = !running;
 }

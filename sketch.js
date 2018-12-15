@@ -10,9 +10,7 @@ function setup() {
 	centerY=windowHeight/2;
 	background(0,0,255);
 	frameRate(1000);
-	button = createButton("FREEZE")
-	button.position (20,20);
-	button.mousePressed (Freeze)  
+	
 }
 function draw() {		
 	if (running) {

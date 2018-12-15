@@ -22,7 +22,5 @@ noStroke();
 ellipse(centerX,centerY,frameCount%750,frameCount%250);
 fill(229,204,255);
 ellipse(centerX,centerY,frameCount%200,frameCount%350)
-}
-function Freeze (){
-	running = !running;
+
 }
